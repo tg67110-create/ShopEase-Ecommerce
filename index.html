@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase - Smart Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>🛍️ ShopEase</h1>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search products..."
+    >
+
+    <button onclick="showCart()">
+        Cart 🛒 <span id="cartCount">0</span>
+    </button>
+
+    <button onclick="showWishlist()">
+        Wishlist ❤️
+    </button>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <button onclick="filterProducts('All')">Home</button>
+    <button onclick="filterProducts('Electronics')">Electronics</button>
+    <button onclick="filterProducts('Fashion')">Fashion</button>
+    <button onclick="filterProducts('Accessories')">Accessories</button>
+    <button onclick="showDashboard()">Analytics</button>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h2>Smart Shopping, Better Experience!</h2>
+    <p>Discover products that match your lifestyle.</p>
+    <button onclick="scrollToProducts()">Explore Products</button>
+</section>
+
+<!-- PRODUCTS -->
+<section id="shopSection">
+
+    <h2 class="section-title">Featured Products</h2>
+
+    <div id="products" class="product-container"></div>
+
+</section>
+
+<!-- CART -->
+<section class="cart-section">
+
+    <h2>Shopping Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <h3>Total: ₹<span id="total">0</span></h3>
+
+    <input
+        type="text"
+        id="coupon"
+        placeholder="Enter coupon EXPO10"
+    >
+
+    <button onclick="applyCoupon()">Apply Coupon</button>
+
+    <button onclick="checkout()">Checkout</button>
+
+</section>
+
+<!-- WISHLIST -->
+<section class="cart-section">
+
+    <h2>My Wishlist ❤️</h2>
+
+    <div id="wishlistItems"></div>
+
+</section>
+
+<!-- CUSTOMER SURVEY -->
+<section class="survey">
+
+    <h2>Consumer Perception Survey</h2>
+
+    <form id="surveyForm">
+
+        <label>How satisfied are you with online shopping?</label>
+
+        <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="5">Excellent</option>
+            <option value="4">Good</option>
+            <option value="3">Average</option>
+            <option value="2">Poor</option>
+            <option value="1">Very Poor</option>
+        </select>
+
+        <label>What influences your purchase decision?</label>
+
+        <select id="factor" required>
+            <option value="">Select Factor</option>
+            <option>Price and Discounts</option>
+            <option>Customer Reviews</option>
+            <option>Product Quality</option>
+            <option>Brand Reputation</option>
+            <option>Easy Application</option>
+        </select>
+
+        <label>Do you trust online shopping applications?</label>
+
+        <select id="trust" required>
+            <option value="">Select</option>
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <label>Are you likely to purchase through shopping apps?</label>
+
+        <select id="purchase" required>
+            <option value="">Select</option>
+            <option>Very Likely</option>
+            <option>Likely</option>
+            <option>Not Sure</option>
+            <option>Unlikely</option>
+        </select>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+
+    <p id="feedbackMessage"></p>
+
+</section>
+
+<!-- ANALYTICS DASHBOARD -->
+<section class="dashboard" id="dashboard">
+
+    <h2>Consumer Behaviour Analytics</h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3 id="responseCount">0</h3>
+            <p>Total Responses</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="averageRating">0</h3>
+            <p>Average Rating</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="totalSales">₹0</h3>
+            <p>Demo Cart Value</p>
+        </div>
+
+    </div>
+
+    <div class="chart-box">
+        <h3>Purchase Decision Factors</h3>
+        <canvas id="factorChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+        <h3>Customer Satisfaction</h3>
+        <canvas id="ratingChart"></canvas>
+    </div>
+
+    <button onclick="exportData()">Export Survey Data CSV</button>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>ShopEase</h3>
+
+    <p>
+        E-Commerce Mobile Applications and Consumer Perception
+    </p>
+
+    <p>© 2026 ShopEase | Exhibition Project</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
